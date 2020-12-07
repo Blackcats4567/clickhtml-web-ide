@@ -1,4 +1,4 @@
-<!--이걸 보시는 여러분! 이건 IDE 데모이며, 동작하지 않습니다.-->
+<!--this is IDE DEMO.-->
 
 <html>
     <head>
@@ -8,7 +8,15 @@
       <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  </head>
+<style>
+#footer {
+clear: left;
+width: 100%;
+background: #ccc;
+text-align: center;
+padding: 4px 0;
+} 
+ </head>
     <body>
         <!--중요 스크립트-->
         <script>
@@ -16,26 +24,26 @@
 var checkUnload = true;
 
 $(window).on("beforeunload", function(){
-    if(checkUnload) return "오래된 웹브라우저로 브라우징 중이시군요! 업그레이드 후 이용하세요.";
+    if(checkUnload) return "Please update your browser";
 
 });
             
             function enterdialog(){
-                var retVal = prompt("텍스트를 입력하세요 : ", "텍스트");
+                var retVal = prompt("Write Text : ", "text");
             }
             
             function auts() {
-  document.getElementById("autosave").innerHTML = "자동 저장: 켜짐";
+  document.getElementById("autosave").innerHTML = "Autosave: enabled";
 }
             
             function dangeroustask() {
-  confirm("작업을 시작하면 취소할 수 없습니다. 계속할까요?");
+  confirm("Ir you start this, you can't cancel this operation. Continue?");
 }
             
             function sharegift(){
-                alert("초대장을 공유합니다. 이번 초대장의 링크는");
-                  alert(location.hostname + "/ide?saveid=asdf&with=guest");
-                confirm("입니다. 공유하시겠습니까?");
+                alert("Sharing invite code. Your invite code is");
+                  alert(location.hostname + "/ide?saveid=asdf&with=guesteng");
+                confirm("Do you want to copy?");
             }
             
  // HTML 저장      
@@ -59,7 +67,7 @@ $(window).on("beforeunload", function(){
     text = text.replace(/\n/g, "\r\n"); // To retain the Line breaks.
     var blob = new Blob([text], { type: "text/plain"});
     var anchor = document.createElement("a");
-    anchor.download = "index - CLICK HTML IDE 호환성 모드.cproprog";
+    anchor.download = "index - CLICK HTML IDE APP.cproprog";
     anchor.href = window.URL.createObjectURL(blob);
     anchor.target ="_blank";
     anchor.style.display = "none"; // just to be safe!
@@ -76,7 +84,7 @@ wpcomment.onkeyup = wpcomment.onkeypress = function(){
             
             $('.DOC_TEXT').keyup(function (e){
     var content = $(this).val();
-  $('#counter').html(""+content.length+" 바이트");   //글자수 카운트
+  $('#counter').html(""+content.length+" Bytes");   //글자수 카운트
 });
             
             
@@ -107,7 +115,7 @@ wpcomment.onkeyup = wpcomment.onkeypress = function(){
   copyText.select();
   copyText.setSelectionRange(0, 99999)
   document.execCommand("copy");
-  alert("복사 완료!");         
+  alert("Copied!");         
             }
         </script>
 <textarea id="bsLoader" style="display:none;"><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"><script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -153,7 +161,7 @@ wpcomment.onkeyup = wpcomment.onkeypress = function(){
       </li>
                  <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          플러그인
+          Plugin
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" onclick='cse()'>Custom Search Engine -Google</a>
@@ -172,7 +180,7 @@ wpcomment.onkeyup = wpcomment.onkeypress = function(){
       </li>
                          <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          블록코딩
+          Block Coding
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="http://editor.clickhtml.kro.kr/">자바스크립트</a>
@@ -181,7 +189,7 @@ wpcomment.onkeyup = wpcomment.onkeypress = function(){
       </li>
          <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          협동
+          Collaboration
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" onclick=" sharegift();">콜라보레이터 초대하기</a>
@@ -192,7 +200,7 @@ wpcomment.onkeyup = wpcomment.onkeypress = function(){
       </li>
                  <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          출시
+          Release
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="http://aws.amazon.com">AWS (Amazon Web Service)</a>
@@ -208,7 +216,7 @@ wpcomment.onkeyup = wpcomment.onkeypress = function(){
       </li>
                  <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          도움말
+          Help
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="#">01. CLICK HTML 시작하기</a>
@@ -228,7 +236,7 @@ wpcomment.onkeyup = wpcomment.onkeypress = function(){
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">프리미엄으로 업그레이드하세요!</h5>
+        <h5 class="modal-title" id="exampleModalLabel">UPGRADE PREMIUM!</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -237,18 +245,18 @@ wpcomment.onkeyup = wpcomment.onkeypress = function(){
           <center>
                       <img src="https://clickhtml.kro.kr/assets/img/service/service-img1.png">
             <br>
-              <h2>가벼운 요금제</h2>
+              <h2>Cheap Prize</h2>
                       <img src="https://clickhtml.kro.kr/assets/img/service/service-img2.png">
             <br>
-              <h2>더 아름다운 전문가 템플릿</h2>
+              <h2>Beautiful Templates</h2>
 
                   <img src="https://clickhtml.kro.kr/assets/img/service/service-img3.png">
             <br>
-              <h2>호스팅, 여러 페이지 사용!</h2>모두가 합하여 <h2>준비중</h2>이라는 가격에 만날 수 있습니다!</center>
+              <h2>Free hosting! And many pages!!</h2>All of this is only <h2>UNDEFINED $</h2>It is very cheap!</center>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">건너뛰기</button>
-        <button type="button" class="btn btn-warning">지금 업그레이드</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Skip</button>
+        <button type="button" class="btn btn-warning">Upgrade now</button>
       </div>
     </div>
   </div>
@@ -281,12 +289,14 @@ wpcomment.onkeyup = wpcomment.onkeypress = function(){
       <div class="row">
           <!-- 계정정보 (하단에 위치)-->
         <div class="col-md-6" style="background: linear-gradient(to bottom, #1C7CE0, #150051);color:white;"><h3>My plan:<br>FREE(ONE PAGE)</h3></div>
-        <div class="col-md-6" style="background-color:black;color:white;"><strong>리소스 사용량</strong><br><ul><li>저장공간: <span style="color:#aaa;" id="counter">0</span>바이트</li></ul></div>
+        <div class="col-md-6" style="background-color:black;color:white;"><strong>Using Resources</strong><br><ul><li>Storage: <span style="color:#aaa;" id="counter">0</span>Bytes</li></ul></div>
       </div>
     </div>
       <!--라이브 미리보기-->
     <div class="col-md-4" id="prevCom" style="background-color:white;color:black;"><br>You will see a preview here!.<br>Write your code!</div> <!-- rightside -->
   </div> 
+<footer id="footer"> 			<div class="innertube"> 				<p>Developed in <a href = "https://www.digncore.xyz" target = "_self">Digncore</a><br><a href = "https://discord.gg/RstbdNr" target = "_self">JOIN OUR DISCORD SERVER!</a></p> 			</div> 		</footer>
+     
              <span style="display:inline-block;transform: rotate(180deg);">&copy;</span> 2020 Blackcats4567, Camt39, redev S, ClICK HTML All rights reserved
     </body>
 </html>
